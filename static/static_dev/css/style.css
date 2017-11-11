@@ -103,7 +103,7 @@ html, body{
 
 .basket-items{
     position: absolute;
-    top: 50px;
+    top: 51px;
     width: 100%;
     background-color: #55e093;
     z-index: 10;
