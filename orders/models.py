@@ -21,7 +21,7 @@ class Status(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(User, blank=True, null=True, default=None)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#total price for all products in order
+    total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0)#total price for all products in order
     customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
     customer_email = models.EmailField(blank=True, null=True, default=None)
     customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
@@ -47,8 +47,8 @@ class ProductInOrder(models.Model):
     order = models.ForeignKey(Order, blank=True, null=True, default=None)
     product = models.ForeignKey(Product, blank=True, null=True, default=None)
     nmb = models.IntegerField(default=1)
-    price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#price*nmb
+    price_per_item = models.DecimalField(max_digits=10, decimal_places=0, default=0)
+    total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0)#price*nmb
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
